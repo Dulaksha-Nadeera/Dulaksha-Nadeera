@@ -1,4 +1,4 @@
-## Hi there 👋
+## Dulaksha Nadeera
 
 <!--
 **Dulaksha-Nadeera/Dulaksha-Nadeera** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
