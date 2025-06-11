@@ -512,7 +512,124 @@ ul.works-list li a {
 ul.works-list li a:hover {
   text-decoration: none;
 }
+.toggle-list {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+  color: #00fff7;
+  background: rgba(0, 255, 247, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00fff7aa;
+}
 
+.toggle-list.show {
+  max-height: 500px; /* big enough for all items */
+  opacity: 1;
+}
+
+.toggle-btn {
+  background-color: #00fff7;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #000;
+  box-shadow: 0 0 20px #00fff7aa;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.toggle-btn:hover {
+  background-color: #00c7a3;
+  color: #fff;
+  box-shadow: 0 0 25px #00c7a3cc;
+}
+
+.toggle-btn.open i {
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+ background: #0e0e0e;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      padding: 50px;
+    }
+
+    .skills-toggle-wrapper {
+      max-width: 400px;
+      margin: auto;
+    }
+
+    .toggle-btn {
+      background-color: #00fff7;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: 700;
+      cursor: pointer;
+      color: #000;
+      box-shadow: 0 0 20px #00fff7aa;
+      font-size: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+
+    .toggle-btn:hover {
+      background-color: #00c7a3;
+      color: #fff;
+      box-shadow: 0 0 25px #00c7a3cc;
+    }
+
+    .toggle-list {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, opacity 0.5s ease;
+      list-style: none;
+      padding-left: 0;
+      margin-top: 15px;
+      background: rgba(0, 255, 247, 0.07);
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00fff7aa;
+    }
+
+    .toggle-list.show {
+      max-height: 500px;
+      opacity: 1;
+    }
+
+    .toggle-list li {
+      padding: 12px 20px;
+      border-bottom: 1px solid rgba(0,255,247,0.1);
+    }
+
+    .toggle-list li:last-child {
+      border-bottom: none;
+    }
+
+    .toggle-list a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      display: block;
+      transition: color 0.3s ease;
+    }
+
+    .toggle-list a:hover {
+      color: #00c7a3;
+    }
 
   </style>
 </head>
@@ -542,6 +659,33 @@ ul.works-list li a:hover {
   </div>
 </div>
 
+<div class="skills-toggle-wrapper">
+  <button id="toggleButton1" class="toggle-btn">
+    <i class="fas fa-folder-open"></i>PC OPTIMIZATION 🔧
+  </button>
+  
+<ul class="toggle-list" id="list1">  
+ <button id="toggleButton1" class="toggle-btn">
+    <i class="fas fa-folder-open"></i>PC OPTIMIZATION Part 01 🔧
+  </button>
+  
+
+      <li><a href="https://drive.google.com/file/d/1o8gCrMO7IQ6QZC2T_R1TAufydC5y4V_g/view?usp=sharing" target="_blank">🧹 Disk Cleaner</a></li>
+      <li><a href="https://drive.google.com/file/d/1Go9lmSh60jx2WMlHzlb7Usf4EO5TsvCi/view?usp=sharing" target="_blank">🚀 Windows Services Disable</a></li>
+      <li><a href="https://drive.google.com/file/d/19FvV3dGcp8NpjPwu6ioc-yCnpc2mRAhV/view?usp=sharing" target="_blank">🛠 Disable Background Services</a></li>
+      <li><a href="https://drive.google.com/file/d/1MGM7t7rWy27ilsJpGIJlvtev4UtWTUvT/view?usp=sharing" target="_blank">🛠 Ram Optimization</a></li>
+      <li><a href="https://drive.google.com/file/d/1Fdh_Ybk7xasOFoyTczDfhGxo_75PmwIJ/view?usp=sharing" target="_blank">🛠 Power Optimization</a></li>
+      <li><a href="https://drive.google.com/file/d/1lJXE4HeEocCrmdIAMHQ7upk9OTFoYRus/view?usp=sharing" target="_blank">🎮 Ultimate FPS</a></li>
+      <li><a href="https://drive.google.com/file/d/17EHxt94TAa5m6eBumu8bDIonaA9wH6X0/view?usp=sharing" target="_blank">🛠 Registry Fixer</a></li>
+      
+    </ul>
+
+    
+
+
+    
+  </div>
+  
 
 <div class="skills-toggle-wrapper">
   <button id="toggleWorksBtn"><i class="fas fa-folder-open"></i>  Editing Software   </button>
@@ -676,7 +820,13 @@ s0.parentNode.insertBefore(s1,s0);
 setInterval(updateTime, 1000);
 updateTime();
 
+ const toggleBtn1 = document.getElementById("toggleButton1");
+    const list1 = document.getElementById("list1");
 
+    toggleBtn1.addEventListener("click", () => {
+      list1.classList.toggle("show");
+      toggleBtn1.classList.toggle("open");
+    });
    
   </script>
 </body>
